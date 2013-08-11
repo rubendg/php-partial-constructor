@@ -3,7 +3,8 @@
    "type": "library",
    "description": "Schönfinkelize your constructor - partial constructor application.",
    "version": "1.0.0",
-   "keywords": [],
+   "license" : "MIT",
+   "keywords": ["partial","functional","constructor","currying","curry"],
    "homepage": "http://www.rubendegooijer.nl",
    "authors": [
       {
@@ -11,6 +12,9 @@
          "email": "rubendegooijer@gmail.com"
       }
    ],
+   "require" : {
+     "php" : ">=5.4" 
+   },
    "autoload": {
       "psr-0": {
          "Schoenfinkel": "src/"
