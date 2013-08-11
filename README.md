@@ -94,23 +94,23 @@ To sum up some of the advantages of using the library:
 - The library also plays nice with the [Symfony DIC](http://symfony.com/blog/symfony-components-the-dependency-injection-container)
   as it allows constructor parameters to be passed immediately into the constructor:
 
-         ```xml
-         <service id="a" class="A"/>
+```xml
+<service id="a" class="A"/>
 
-         <service id="foo" class="Foo_">
-            <argument type="collection">
-               <argument key="a" id="a" type="service"/>
-            </argument>
-         </service>
-         ```
+<service id="foo" class="Foo_">
+   <argument type="collection">
+      <argument key="a" id="a" type="service"/>
+   </argument>
+</service>
+```
          
 Disadvantages:
 
 - Induces a slight performance overhead. 
 
-        ```bash
-        ./vendor/bin/phpunit test/performance/PerformanceTest.php
-        ```
+```bash
+./vendor/bin/phpunit test/performance/PerformanceTest.php
+```
 
   Shows that plain object construction is about 26 times faster.
 - Does not work for constructors that take a variable amount of arguments (using func_get_args())
