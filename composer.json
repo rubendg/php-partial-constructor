@@ -1,7 +1,7 @@
 {
    "name": "php-partial-constructor/php-partial-constructor",
    "type": "library",
-   "description": "Schönfinkelize your constructor - partial constructor application.",
+   "description": "Partial constructor application.",
    "license" : "MIT",
    "keywords": ["partial","functional","constructor","currying","curry"],
    "homepage": "https://github.com/rubendg/php-partial-constructor",

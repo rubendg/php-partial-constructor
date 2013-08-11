@@ -1,4 +1,4 @@
-# Schönfinkelize your constructor - or partial constructor application for PHP
+# Schönfinkelize your constructor - partial constructor application for PHP
 
 [![Build Status](https://api.travis-ci.org/rubendg/php-partial-constructor.png?branch=master)](http://travis-ci.org/rubendg/php-partial-constructor)
 
