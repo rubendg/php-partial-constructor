@@ -1,0 +1,11 @@
+<phpunit bootstrap="src/autoload.php"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         mapTestClassNameToCoveredClassName="false">
+    <testsuites>
+        <testsuite>
+            <directory>test/functional</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
