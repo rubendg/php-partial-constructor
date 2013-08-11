@@ -85,13 +85,13 @@ To sum up some of the advantages of using the library:
 - The library also plays nice with the [Symfony DIC](http://symfony.com/blog/symfony-components-the-dependency-injection-container)
   as it allows constructor parameters to be passed immediately into the constructor:
 
-      <service id="a" class="A"/>
+         <service id="a" class="A"/>
 
-      <service id="foo" class="Foo_">
-         <argument type="collection">
-            <argument key="a" id="a" type="service"/>
-         </argument>
-      </service>
+         <service id="foo" class="Foo_">
+            <argument type="collection">
+               <argument key="a" id="a" type="service"/>
+            </argument>
+         </service>
 
 Disadvantages:
 
