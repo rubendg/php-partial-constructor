@@ -1,7 +1,7 @@
 {
    "name": "php-partial-constructor/php-partial-constructor",
    "type": "library",
-   "description": "Schönfinkelize your constructor",
+   "description": "Schönfinkelize your constructor - partial constructor application.",
    "version": "1.0.0",
    "keywords": [],
    "homepage": "http://www.rubendegooijer.nl",
