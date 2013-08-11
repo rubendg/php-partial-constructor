@@ -5,7 +5,7 @@
    "version": "1.0.0",
    "license" : "MIT",
    "keywords": ["partial","functional","constructor","currying","curry"],
-   "homepage": "http://www.rubendegooijer.nl",
+   "homepage": "https://github.com/rubendg/php-partial-constructor",
    "authors": [
       {
          "name": "Ruben de Gooijer",
