@@ -88,8 +88,7 @@ To sum up some of the advantages of using the library:
 - You can use type hinting for classes with partial construction enabled
 - Until the application of all constructor parameters every parameter can modified/overwritten
 - Partially applied objects can be passed around like ordinary classes
-- Independent of dependency injection framework (as opposed to [guice](http://slesinsky.org/brian/code/guice_with_curry.html))
-- Nicely integrates with Composer projects
+- Independent of dependency injection framework
 - Type hint checks are maintained during partial application
 - The library also plays nice with the [Symfony DIC](http://symfony.com/blog/symfony-components-the-dependency-injection-container)
   as it allows constructor parameters to be passed immediately into the constructor:
