@@ -46,8 +46,8 @@ instantiates the target class *Foo*.
 All you need to do is create a companion class for *Foo* called *Foo_*: 
 
 ```php
-class Foo_ extends Schoenfinkelize {
-   protected static $typeMap;
+class Foo_ implements \ArrayAccess {
+   use Schoenfinkel\Schoenfinkelize;
    protected static $targetClassName = 'Foo';
 }
 ```

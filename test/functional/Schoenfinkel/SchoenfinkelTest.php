@@ -10,6 +10,9 @@
 
 namespace Schoenfinkel;
 
+use \ArrayAccess;
+use \BadMethodCallException;
+use \InvalidArgumentException;
 use \PHPUnit_Framework_TestCase;
 
 class SchoenfinkelTest extends PHPUnit_Framework_TestCase {
@@ -20,8 +23,19 @@ class SchoenfinkelTest extends PHPUnit_Framework_TestCase {
       ]);
    }
    
-   public function testPartialClass() {
-      new \ReflectionClass_;
+   public function testTargetInstantiation() {
+      $a = new InfectedColorApple_;
+      
+      $this->assertInstanceOf('Schoenfinkel\InfectedColorApple', $a->apply([
+         'color' => new Color,
+         'worm' => new Worm
+      ]));
+   }
+   
+   public function testCodeGeneration() {
+      $this->assertInstanceOf('ReflectionClass', (new \ReflectionClass_)->apply([
+         'argument' => 'Schoenfinkel\InfectedColorApple'
+      ]));
    }
    
    /**
@@ -106,7 +120,7 @@ class SchoenfinkelTest extends PHPUnit_Framework_TestCase {
          'color' => new Color
       ]));
    }
-
+   
    /**
     * @expectedException InvalidArgumentException
     */
@@ -161,8 +175,8 @@ class InfectedColorApple {
    }
 }
 
-class InfectedColorApple_ extends Schoenfinkelize {
-   protected static $typeMap;
+class InfectedColorApple_ implements ArrayAccess {
+   use Schoenfinkelize;
    protected static $targetClassName = 'Schoenfinkel\InfectedColorApple';
 }
 
@@ -172,8 +186,8 @@ class Foo {
    }
 }
 
-class Foo_ extends Schoenfinkelize {
-   protected static $typeMap;
+class Foo_ implements ArrayAccess {
+   use Schoenfinkelize;
    protected static $targetClassName = 'Schoenfinkel\Foo';
 }
 
@@ -183,8 +197,8 @@ class Bar {
    }
 }
 
-class Bar_ extends Schoenfinkelize {
-   protected static $typeMap;
+class Bar_ implements ArrayAccess {
+   use Schoenfinkelize;
    protected static $targetClassName = 'Schoenfinkel\Bar';
 }
 
@@ -194,7 +208,7 @@ class FooBar {
    }
 }
 
-class FooBar_ extends Schoenfinkelize {
-   protected static $typeMap;
+class FooBar_ implements ArrayAccess {
+   use Schoenfinkelize;
    protected static $targetClassName = 'Schoenfinkel\FooBar';
 }

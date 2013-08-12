@@ -19,7 +19,7 @@ use \ReflectionClass;
 /**
  * 
  */
-abstract class Schoenfinkelize implements ArrayAccess {
+trait Schoenfinkelize {
 
    /**
     * An instance for the target class used to obtain the constructor
@@ -43,7 +43,7 @@ abstract class Schoenfinkelize implements ArrayAccess {
     * 
     * @var string
     */
-   protected static $targetClassName;
+//   protected static $targetClassName;
 
    /**
     * Contains a mapping from argument name to its type.
@@ -58,12 +58,12 @@ abstract class Schoenfinkelize implements ArrayAccess {
    /**
     * Constant for arguments of type array
     */
-   const arrayType = 0;
+   private static $arrayType = 0;
    
    /**
     * Constant for argument of type callable
     */
-   const callableType = 1;
+   private static $callableType = 1;
    
 
    /**
@@ -110,9 +110,9 @@ abstract class Schoenfinkelize implements ArrayAccess {
                if($class = $param->getClass()) {
                   static::$typeMap[$param->name] = $class->name;
                } else if($param->isArray()) {
-                  static::$typeMap[$param->name] = self::arrayType;
+                  static::$typeMap[$param->name] = self::$arrayType;
                } else if($param->isCallable()) {
-                  static::$typeMap[$param->name] = self::callableType;
+                  static::$typeMap[$param->name] = self::$callableType;
                }
             }
          }
@@ -183,8 +183,8 @@ abstract class Schoenfinkelize implements ArrayAccess {
       
       $match = $expectedType === null
          || is_string($expectedType) && $value instanceof $expectedType
-         || is_array($value)         && $expectedType === self::arrayType
-         || is_callable($value)      && $expectedType === self::callableType;
+         || is_array($value)         && $expectedType === self::$arrayType
+         || is_callable($value)      && $expectedType === self::$callableType;
       
       if(!$match)  {
          throw new InvalidArgumentException("Expected \"$name\" to be of type \"$expectedType\", but got a value of type \"".  gettype($value)."\"");

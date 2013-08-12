@@ -63,7 +63,7 @@ class Fooo {
    }
 }
 
-class Fooo_ extends Schoenfinkelize {
-   protected static $typeMap;
+class Fooo_ {
+   use Schoenfinkelize;
    protected static $targetClassName = 'Fooo';
 }

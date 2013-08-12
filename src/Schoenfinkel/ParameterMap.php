@@ -79,29 +79,14 @@ class ParameterMap implements ArrayAccess, IteratorAggregate {
    }
    
    private function partition() {
-      $got = [];
-      $expected = [];
-      foreach($this as $k => $v) {
-         if(is_null($v)) {
-            $expected[] = $k;
-         } else {
-            $got[] = $k;
-         }
-      }
-      
+      $got = array_keys($this->map);
+      $expected = array_diff($this->parameterNames, $got);
       return [$got, $expected];
    }
    
    public function merge(ParameterMap $map) {
       $new = new self($this->class, $this->parameterNames);
-      foreach($this->parameterNames as $k) {
-         if(is_null($map[$k])) {
-            $new[$k] = $this[$k];
-         } else {
-            $new[$k] = $map[$k];
-         }
-      }
-      return $new;
+      return $new->fill($map);
    }
    
    public function getIterator() {
@@ -109,10 +94,9 @@ class ParameterMap implements ArrayAccess, IteratorAggregate {
    }
    
    public function __toString() {
-      list(, $expected) = $this->partition();
-      $expects = $this->keys();
-      return "Expects: " . implode(', ', $expects) . "\n" .
-             "Missing: " . implode(', ', $expected) . "\n";
+      list($got, $expected) = $this->partition();
+      return "Got: " . implode(', ', $got) . "\n" .
+             "Still expecting: " . implode(', ', $expected) . "\n";
    }
    
 }

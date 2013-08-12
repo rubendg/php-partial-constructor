@@ -30,8 +30,8 @@ class CodeGenerator {
       $namespace = $namespace ? "namespace $namespace;" : '';
       return <<<EOT
 $namespace
-class $transFqn extends \Schoenfinkel\Schoenfinkelize {
-   protected static \$typeMap;
+class $transFqn implements \ArrayAccess {
+   use \Schoenfinkel\Schoenfinkelize;
    protected static \$targetClassName = '{$class->name}';
 }
 EOT;
