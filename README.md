@@ -86,7 +86,7 @@ To sum up some of the advantages of using the library:
 - For simple cases replaces to need for applying the [builder pattern](http://en.wikipedia.org/wiki/Builder_pattern)
 - No more setters for attributes that should be provided in the constructor
 - Type hinting support for partially constructed classes (albeit of minimal expressiveness see disadvantages)
-- Until all parameters are provided every parameter can accessed by name or overwritten
+- Until all parameters are provided every parameter can accessed by name and or overwritten
 - Partially applied objects can be passed around like ordinary classes
 - Independent of dependency injection framework
 - Type hints of target class are checked during partial application ([fail-fast](http://en.wikipedia.org/wiki/Fail-fast))
