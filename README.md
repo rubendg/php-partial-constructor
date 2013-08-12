@@ -83,15 +83,15 @@ This may be a problem for you if you have disabled *eval* in the [disabled_funct
 
 To sum up some of the advantages of using the library:
 
-- Replaces the need for the [Builder pattern](http://en.wikipedia.org/wiki/Builder_pattern) in simple cases
-- No more setters and if statements for properties that should really be provided to the constructor
-- You can use type hinting for classes with partial construction enabled
-- Until the application of all constructor parameters every parameter can modified/overwritten
+- For simple cases replaces to need for applying the [builder pattern](http://en.wikipedia.org/wiki/Builder_pattern)
+- No more setters for attributes that should be provided in the constructor
+- Type hinting support for partially constructed classes (albeit of minimal expressiveness see disadvantages)
+- Until all parameters are provided every parameter can accessed by name or overwritten
 - Partially applied objects can be passed around like ordinary classes
 - Independent of dependency injection framework
-- Type hint checks are maintained during partial application
-- The library also plays nice with the [Symfony DIC](http://symfony.com/blog/symfony-components-the-dependency-injection-container)
-  as it allows constructor parameters to be passed immediately into the constructor:
+- Type hints of target class are checked during partial application ([fail-fast](http://en.wikipedia.org/wiki/Fail-fast))
+- The library also plays nice with [Symfony DIC](http://symfony.com/blog/symfony-components-the-dependency-injection-container).
+  A subset of the actual constructor parameters can be passed directly into the partial constructor:
 
 ```xml
 <service id="a" class="A"/>
