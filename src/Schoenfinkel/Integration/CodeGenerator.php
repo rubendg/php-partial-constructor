@@ -31,7 +31,7 @@ class CodeGenerator {
       $namespace = $namespace ? "namespace $namespace;" : '';
       return <<<EOT
 $namespace
-class $transFqn extends Schoenfinkel\Schoenfinkelize {
+class $transFqn extends \Schoenfinkel\Schoenfinkelize {
    protected static \$typeMap;
    protected static \$targetClassName = '$fqn';
 }
