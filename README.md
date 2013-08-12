@@ -111,7 +111,7 @@ Disadvantages:
 ./vendor/bin/phpunit test/performance/PerformanceTest.php
 ```
 
-  Shows that plain object construction is about 26 times faster.
+  Shows that plain object construction is about 24 times faster.
 - Does not work for constructors that take a variable amount of arguments (using func_get_args())
 - Default and optional arguments are treated as regular (required) arguments. 
 
