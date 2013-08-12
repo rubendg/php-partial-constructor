@@ -58,8 +58,8 @@ class ParameterMap implements ArrayAccess, IteratorAggregate {
    
    public function saturated() {
       $isSaturated = true;
-      foreach($this->map as $k => $v) {
-         if(is_null($v)) {
+      foreach($this->parameterNames as $paramName) {
+         if(!isset($this->map[$paramName])) {
             $isSaturated = false;
             break;
          }

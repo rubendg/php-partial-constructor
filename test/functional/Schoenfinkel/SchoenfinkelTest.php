@@ -14,6 +14,12 @@ use \PHPUnit_Framework_TestCase;
 
 class SchoenfinkelTest extends PHPUnit_Framework_TestCase {
       
+   public function testConstructorApplication() {
+      new InfectedColorApple_([
+         'color' => new Color
+      ]);
+   }
+   
    public function testPartialClass() {
       new \ReflectionClass_;
    }
