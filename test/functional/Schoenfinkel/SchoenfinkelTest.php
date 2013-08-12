@@ -14,10 +14,7 @@ use \PHPUnit_Framework_TestCase;
 
 class SchoenfinkelTest extends PHPUnit_Framework_TestCase {
       
-   /**
-    * @expectedException DomainException
-    */
-   public function testInvalidPartialClass() {
+   public function testPartialClass() {
       new \ReflectionClass_;
    }
    

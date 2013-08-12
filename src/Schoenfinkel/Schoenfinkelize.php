@@ -118,8 +118,8 @@ abstract class Schoenfinkelize implements ArrayAccess {
          }
          
          $numArgs = count($params);
-         if($numArgs <= 1) {
-            throw new DomainException("There is no point in enabling partial constructor application for \"{$this->targetClass->getName()}\" which has $numArgs argument(s)");
+         if($numArgs < 1) {
+            throw new DomainException("There is no point in enabling partial constructor application for \"{$this->targetClass->getName()}\" which has zero arguments");
          }
          
          $this->parameterMap = new ParameterMap($this->targetClass->getName(), $paramNames);
