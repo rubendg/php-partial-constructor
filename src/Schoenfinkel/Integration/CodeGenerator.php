@@ -25,15 +25,14 @@ class CodeGenerator {
    }
    
    public function getPartialClass(ReflectionClass $class) {
-      $fqn = $class->getShortName();
-      $transFqn = $this->classNameMapper->to($fqn);
+      $transFqn = $this->classNameMapper->to($class->getShortName());
       $namespace = $class->getNamespaceName();
       $namespace = $namespace ? "namespace $namespace;" : '';
       return <<<EOT
 $namespace
 class $transFqn extends \Schoenfinkel\Schoenfinkelize {
    protected static \$typeMap;
-   protected static \$targetClassName = '$fqn';
+   protected static \$targetClassName = '{$class->name}';
 }
 EOT;
    }
