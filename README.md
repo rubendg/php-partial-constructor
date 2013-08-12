@@ -81,7 +81,7 @@ postfix on the *PostfixClassNameMapping* or implement your own *ClassNameMapping
 Note that currently the implementation uses *eval* for bringing the generated code into scope. 
 This may be a problem for you if you have disabled *eval* in the [disabled_functions](http://php.net/manual/en/ini.core.php#ini.disable-functions) directive.
 
-To sum up some of the advantages of using the library:
+To sum up some of the libraries' advantages:
 
 - For simple cases replaces to need for applying the [builder pattern](http://en.wikipedia.org/wiki/Builder_pattern)
 - No more setters for attributes that should be provided in the constructor
