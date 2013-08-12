@@ -114,11 +114,14 @@ Disadvantages:
   Shows that plain object construction is about 24 times faster.
 - Does not work for constructors that take a variable amount of arguments (using func_get_args())
 - Default and optional arguments are treated as regular (required) arguments. 
+- Currently the class facilitating partial construction does not take on any of the types that its target
+  class might have. Hence type hinting for partial classes is of limited expressiveness.
 
 Future:
 
 - Maybe provide class generation based on PHP annotations @Curried
 - Maybe replace *eval* with something like this: http://www.whitewashing.de/2010/12/18/generate-proxy-code-using-a-stream-wrapper.html 
+- Lift the restriction put up at the last point of the disadvantages listing.
 
 Related:
 
