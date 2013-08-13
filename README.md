@@ -85,11 +85,11 @@ To sum up some of the libraries' advantages:
 
 - For simple cases replaces to need for applying the [builder pattern](http://en.wikipedia.org/wiki/Builder_pattern)
 - No more setters for attributes that should be provided in the constructor
-- Type hinting support for partially constructed classes (albeit of minimal expressiveness see disadvantages)
+- Type hinting support for partially constructed classes (albeit of minimal expressiveness, see below)
 - Until all parameters are provided every parameter can accessed by name and or overwritten
 - Partially applied objects can be passed around like ordinary classes
 - Independent of dependency injection framework
-- Type hints of target class are checked during partial application ([fail-fast](http://en.wikipedia.org/wiki/Fail-fast))
+- Type hints of target class are checked during parameter application ([fail-fast](http://en.wikipedia.org/wiki/Fail-fast))
 - The library also plays nice with [Symfony DIC](http://symfony.com/blog/symfony-components-the-dependency-injection-container).
   A subset of the actual constructor parameters can be passed directly into the partial constructor:
 
@@ -113,15 +113,14 @@ Disadvantages:
 
   Shows that plain object construction is about 24 times faster.
 - Does not work for constructors that take a variable amount of arguments (using func_get_args())
-- Default and optional arguments are treated as regular (required) arguments. 
-- Currently the class facilitating partial construction does not take on any of the types that its target
-  class might have. Hence type hinting for partial classes is of limited expressiveness.
+- Default and optional arguments are treated as regular (required) arguments.
+- Currently a partially constructed class still expecting 1 parameter cannot be distinguished in its type from the same partially constructed class expecting any other number of parameters.
 
 Future:
 
 - Maybe provide class generation based on PHP annotations @Curried
 - Maybe replace *eval* with something like this: http://www.whitewashing.de/2010/12/18/generate-proxy-code-using-a-stream-wrapper.html 
-- Lift the restriction put up at the last point of the disadvantages listing.
+- Reflect the number of expected parameters in the type of a partially constructed class.
 
 Related:
 
