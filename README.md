@@ -27,7 +27,7 @@ class Foo {
 
 This would however imply that every method relying on the presence of *B* will
 need an additional consistency check. If *B* really is an integral part of what
-it means to be a *Foo* it should belong in the constructor, not in a setter [see](http://en.wikipedia.org/wiki/Constructor_(object-oriented_programming).
+it means to be a *Foo* it should belong in the constructor, not in a setter [see](http://en.wikipedia.org/wiki/Constructor_\(object-oriented_programming\)).
 
 Using the library it is possible to maintain the previous design with a little
 extra help:
