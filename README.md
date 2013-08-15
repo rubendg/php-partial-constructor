@@ -114,7 +114,7 @@ Disadvantages:
 
   Shows that plain object construction is about 24 times faster.
 - Does not work for constructors that take a variable amount of arguments (using func_get_args())
-- Default and optional arguments are treated as regular (required) arguments.
+- Default and optional arguments are currently treated as regular (required) arguments.
 - Currently a partially constructed class still expecting 1 parameter cannot be distinguished in its type from the same partially constructed class expecting any other number of parameters.
 
 Future:
