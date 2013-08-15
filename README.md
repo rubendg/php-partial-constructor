@@ -53,7 +53,8 @@ class Foo_ implements \ArrayAccess {
 }
 ```
 
-All you have to do is let "$targetClassName* point to *Foo*. 
+All you have to do is let "$targetClassName* point to *Foo*. The rest is handled
+by the *Schoenfinkelize* trait.
 
 Obviously creating such companion classes quickly becomes tiresome. Luckily you
 can get rid of the manual boilerplate by generating the classes on the fly.
