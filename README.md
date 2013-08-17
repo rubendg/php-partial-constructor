@@ -6,6 +6,14 @@ A library for partially applying object constructors. Instead of providing all
 constructor arguments it puts you in control over *when* you 
 provide *which* constructor arguments.
 
+Install using Composer:
+
+```bash
+php composer.phar require php-partial-constructor/php-partial-constructor:dev-master
+
+php composer.phar update
+```
+
 A quick example. Suppose you have a class *Foo*:
 
 ```php
