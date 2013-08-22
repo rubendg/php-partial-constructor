@@ -36,5 +36,16 @@ class SchoenfinkelClassLoader {
       
       return $this->loader->loadClass($class);
    }
+   
+   /**
+    * Forward all other calls to the wrapped class loader
+    * 
+    * @param type $name
+    * @param type $arguments
+    * @return type
+    */
+   public function __call($name, $arguments) {
+      return call_user_func_array([$this->loader, $name], $arguments);
+   }
 
 }
